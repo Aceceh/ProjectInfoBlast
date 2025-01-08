@@ -59,11 +59,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(TextUtils.isEmpty(email))
         {
-            Toast.makeText(this, "Please write your email...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your email...", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(password))
         {
-            Toast.makeText(this, "Please write your password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your password...", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(confirmPassword))
         {
@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else if(!password.equals(confirmPassword))
         {
-            Toast.makeText(this, "Your password do not match with your confirm password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Your confirm password do not match with your password...", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -89,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
                             {
                                 SendUserToSetupActivity();
 
-                                Toast.makeText(RegisterActivity.this, "You are authenticated successfully...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "You are registered", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
                             }
                             else

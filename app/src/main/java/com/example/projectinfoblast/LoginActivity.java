@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         UserEmail = (EditText) findViewById(R.id.register_email);
         UserPassword = (EditText) findViewById(R.id.register_password);
         LoginButton = (Button) findViewById(R.id.register_button);
+        loadingBar = new ProgressDialog(this);
 
         NeedNewAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,10 +60,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void SendUserToRegisterActivity() {
-        Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(registerIntent);
-    }
 
     @Override
     protected void onStart() {
@@ -85,12 +82,10 @@ public class LoginActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Please enter your email...", Toast.LENGTH_SHORT).show();
 
-
         } else if (TextUtils.isEmpty(password))
         {
 
             Toast.makeText(this, "Please enter your password...", Toast.LENGTH_SHORT).show();
-
         }
         else
         {
@@ -110,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                                 SendUserToMainActivity();
 
                                 Toast.makeText(LoginActivity.this, "You have logged In successfully.", Toast.LENGTH_SHORT).show();
-
+                                loadingBar.dismiss();
                             }
                             else
                             {
@@ -131,6 +126,19 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(mainIntent);
         finish();
     }
+
+    private void SendUserToRegisterActivity()
+    {
+        Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(registerIntent);
     }
+
+}
+
+
+
+
+
+
 
 
