@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //aceceh was here
+    //haziq was here
 
 
     private void SendUserToRegisterActivity()
