@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
     private DataSnapshot dataSnapshot;
+    private ImageButton AddNewPostButton;
 
     // ADAM WAS HERE
     @Override
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mToolBar = (Toolbar) findViewById(R.id.main_page_toolbar);
+        AddNewPostButton =(ImageButton) findViewById(R.id.add_new_post_button);
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
         setSupportActionBar(mToolBar); //add tool bar to main activity
         getSupportActionBar().setTitle("Home");
@@ -57,7 +60,15 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         View navView = navigationView.inflateHeaderView(R.layout.navigation_header);
-        // three bar menu line
+
+        AddNewPostButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                SendUserToPostActivity();
+            }
+        });
+
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -69,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    private void SendUserToPostActivity() {
+        Intent addNewPostIntent = new Intent (MainActivity.this, PostActivity.class);
+        startActivity(addNewPostIntent);
     }
 
     @Override
@@ -135,10 +151,12 @@ public class MainActivity extends AppCompatActivity {
         }
         if (item.getItemId() == R.id.nav_addpost) {
             Toast.makeText(MainActivity.this, "Add New Post", Toast.LENGTH_SHORT).show();
+            SendUserToPostActivity();
 
         }
         if (item.getItemId() == R.id.nav_home) {
             Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+
 
         }
         if (item.getItemId() == R.id.nav_setting) {

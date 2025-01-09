@@ -25,7 +25,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SetupActivity extends AppCompatActivity {
 
-    private EditText UserName, FullName, CountryName;
+    private EditText UserName, FullName, CourseName;
     private Button SaveInformationbuttion;
     private CircleImageView ProfileImage;
     private FirebaseAuth mAuth;
@@ -46,9 +46,8 @@ public class SetupActivity extends AppCompatActivity {
 
         UserName = (EditText) findViewById(R.id.setup_username);
         FullName = (EditText) findViewById(R.id.setup_fullname);
-        CountryName = (EditText) findViewById(R.id.setup_course);
+        CourseName = (EditText) findViewById(R.id.setup_course);
         SaveInformationbuttion = (Button) findViewById(R.id.setup_button);
-        ProfileImage = (CircleImageView) findViewById(R.id.setup_profile_image);
         loadingBar = new ProgressDialog(this);
 
 
@@ -65,7 +64,7 @@ public class SetupActivity extends AppCompatActivity {
     {
         String username = UserName.getText().toString();
         String fullname = FullName.getText().toString();
-        String country = CountryName.getText().toString();
+        String course = CourseName.getText().toString();
 
         if(TextUtils.isEmpty(username))
         {
@@ -75,7 +74,7 @@ public class SetupActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Please enter your full name...", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(country))
+        if(TextUtils.isEmpty(course))
         {
             Toast.makeText(this, "Please enter your course...", Toast.LENGTH_SHORT).show();
         }
@@ -89,12 +88,14 @@ public class SetupActivity extends AppCompatActivity {
             HashMap userMap = new HashMap();
             userMap.put("username", username);
             userMap.put("fullname", fullname);
-            userMap.put("country", country);
-            userMap.put("status", "Hey there, i am using InfoBlast, developed by Captain America team!");
+            userMap.put("course", course);
+            userMap.put("status", "Hey there, i am using Poster Social Network, developed by Coding Cafe.");
             userMap.put("gender", "none");
-            userMap.put("dob", "");
+            userMap.put("dob", "none");
             userMap.put("relationshipstatus", "none");
+
             UsersRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
+
                 @Override
                 public void onComplete(@NonNull Task task)
                 {
