@@ -11,14 +11,40 @@
 
     <include
         android:id="@+id/update_post_page_toolbar"
-        layout="@layout/app_bar_layout" />
+        layout="@layout/app_bar_layout_dark" />
+
+    <TextView
+        android:id="@+id/captionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="430dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Add a caption :"
+        android:textColor="@color/lightGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="387dp" />
+
+    <TextView
+        android:id="@+id/postTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="115dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Click to upload image :"
+        android:textColor="@color/lightGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="387dp" />
 
     <ImageButton
         android:id="@+id/select_post_image"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="145dp"
         android:background="@drawable/select_image" />
 
     <EditText
@@ -32,7 +58,7 @@
         android:gravity="start|top"
         android:hint="Caption"
         android:inputType="textMultiLine"
-        android:padding="10dp" />
+        android:padding="14dp" />
 
     <Button
         android:id="@+id/update_post_button"
@@ -42,7 +68,7 @@
         android:layout_marginTop="570dp"
         android:background="@drawable/button"
         android:fontFamily="@font/poppins_medium"
-        android:padding="20dp"
+        android:padding="18dp"
         android:text="Post"
         android:textColor="@color/white"
         android:textSize="18sp" />

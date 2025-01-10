@@ -36,7 +36,7 @@
 
 
                 <TextView
-                    android:id="@+id/post_user_name"
+                    android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Username"
@@ -57,29 +57,11 @@
                     android:padding="2dp">
 
                     <TextView
-                        android:id="@+id/text"
+                        android:id="@+id/status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="has been updated a post"
-                        android:textColor="@color/black"
-                        android:textSize="13dp"
-                        android:textStyle="bold">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/post_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Date"
-                        android:textColor="@color/black"
-                        android:textSize="13dp">
-
-                    <TextView
-                        android:id="@+id/post_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Time"
-                        android:textColor="@color/black"
+                        android:text="Post Status"
+                        android:textColor="@color/darkGrey"
                         android:textSize="13dp">
                     </TextView>
 
@@ -89,31 +71,29 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/post_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Post Description"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:padding="3dp"
-            android:textSize="14dp"
-            android:textColor="@color/black">
-
-        </TextView>
-
         <ImageView
-            android:id="@+id/post_image"
+            android:id="@+id/imageview"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:layout_margin="3dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop">
 
 
-
-
         </ImageView>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:padding="3dp"
+            android:text="Post Description"
+            android:textColor="@color/black"
+            android:textSize="14dp">
+
+        </TextView>
 
     </LinearLayout>
 

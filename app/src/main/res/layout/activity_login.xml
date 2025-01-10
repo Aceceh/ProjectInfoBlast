@@ -77,7 +77,7 @@
         android:layout_marginTop="220dp"
         android:layout_marginLeft="160dp"
         android:layout_centerHorizontal="true"
-        android:text="Login"
+        android:text="InfoBlast"
         android:textStyle="bold"
         android:fontFamily="@font/poppins_medium"
         android:textColor="#FFFFFF"

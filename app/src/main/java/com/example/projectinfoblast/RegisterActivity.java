@@ -59,19 +59,19 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(TextUtils.isEmpty(email))
         {
-            Toast.makeText(this, "Please enter your email...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(password))
         {
-            Toast.makeText(this, "Please enter your password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(confirmPassword))
         {
-            Toast.makeText(this, "Please confirm your password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please confirm your password", Toast.LENGTH_SHORT).show();
         }
         else if(!password.equals(confirmPassword))
         {
-            Toast.makeText(this, "Your confirm password do not match with your password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Your confirm password do not match with your password", Toast.LENGTH_SHORT).show();
         }
         else
         {

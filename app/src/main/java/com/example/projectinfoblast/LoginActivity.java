@@ -80,12 +80,12 @@ public class LoginActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(email))
         {
-            Toast.makeText(this, "Please enter your email...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
 
         } else if (TextUtils.isEmpty(password))
         {
 
-            Toast.makeText(this, "Please enter your password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
         }
         else
         {

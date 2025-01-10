@@ -65,7 +65,7 @@ public class PostActivity extends AppCompatActivity {
 
         if(TextUtils.isEmpty(Description))
         {
-            Toast.makeText(this,"Please say something about your image...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Please add a caption", Toast.LENGTH_SHORT).show();
         }
 
         //StoringImageToFirebaseStorage() x boleh guna firebase storage
@@ -84,7 +84,7 @@ public class PostActivity extends AppCompatActivity {
     }
 
 
-    private  void SendUserToMainActivity()
+    private void SendUserToMainActivity()
     {
         Intent mainIntent = new Intent(PostActivity.this, MainActivity.class);
         startActivity(mainIntent);
