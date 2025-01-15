@@ -51,10 +51,11 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-    private  void SendUserToMainActivity()
+    private void SendUserToMainActivity()
     {
         Intent mainIntent = new Intent(ProfileActivity.this, MainActivity.class);
         startActivity(mainIntent);
+        finish();
     }
 
 }

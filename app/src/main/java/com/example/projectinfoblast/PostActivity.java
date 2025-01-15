@@ -88,6 +88,7 @@ public class PostActivity extends AppCompatActivity {
     {
         Intent mainIntent = new Intent(PostActivity.this, MainActivity.class);
         startActivity(mainIntent);
+        finish();
     }
 }
 
